@@ -7,7 +7,7 @@ def main():
     try:
         queue_name = os.environ['SQS_QUEUE']
     except KeyError:
-        logger.error('Please set the environment variable SQS_QUEUE')
+        print('Please set the environment variable SQS_QUEUE')
         sys.exit(1)
 
     sqs = boto3.resource('sqs')
