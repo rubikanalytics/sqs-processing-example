@@ -10,6 +10,8 @@ def main():
         print('Please set the environment variable SQS_QUEUE')
         sys.exit(1)
 
+    print(queue_name)
+
     sqs = boto3.resource('sqs')
     queue = sqs.get_queue_by_name(QueueName=queue_name)
 
