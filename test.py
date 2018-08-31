@@ -12,8 +12,7 @@ def main():
 
     print(queue_name)
 
-    sqs = boto3.resource('sqs')
-    queue = sqs.get_queue_by_name(QueueName=queue_name)
+    queue = boto3.resource('sqs').get_queue_by_name(QueueName=queue_name)
 
     while True:
         for message in queue.receive_messages(WaitTimeSeconds=20):
